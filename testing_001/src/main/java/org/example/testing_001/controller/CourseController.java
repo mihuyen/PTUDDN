@@ -23,8 +23,8 @@ public class CourseController {
 
     @GetMapping("/add")
     public String showNewCourseForm(Model model) {
-        Course Course = new Course();
-        model.addAttribute("course", Course);
+        Course course = new Course();
+        model.addAttribute("course", course);
         return "new_course";
     }
 
@@ -36,23 +36,20 @@ public class CourseController {
     }
 
     @GetMapping("/update/{id}")
-    public String showFormForUpdate(@PathVariable( value = "id") long id, Model model) {
-
+    public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
         Course course = courseService.getCourseById(id);
         model.addAttribute("course", course);
         return "update_course";
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteCourse(@PathVariable (value = "id") long id) {
-
+    public String deleteCourse(@PathVariable(value = "id") long id) {
         this.courseService.deleteCourseById(id);
         return "redirect:/";
     }
 
-
     @GetMapping("/page/{pageNo}")
-    public String findPaginated(@PathVariable (value = "pageNo") int pageNo,
+    public String findPaginated(@PathVariable(value = "pageNo") int pageNo,
                                 @RequestParam("sortField") String sortField,
                                 @RequestParam("sortDir") String sortDir,
                                 Model model) {
