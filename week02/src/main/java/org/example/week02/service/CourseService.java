@@ -1,6 +1,6 @@
 package org.example.week02.service;
 
-import com.example.testing_001.model.Course;
+import org.example.week02.model.Course;
 import java.util.List;
 import org.springframework.data.domain.Page;
 

@@ -1,7 +1,7 @@
 package org.example.week02.service;
 
-import com.example.testing_001.model.Course;
-import com.example.testing_001.repository.CourseRepository;
+import org.example.week02.model.Course;
+import org.example.week02.respository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
