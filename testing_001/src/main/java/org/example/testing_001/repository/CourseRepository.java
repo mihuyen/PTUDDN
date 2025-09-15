@@ -1,6 +1,6 @@
-package org.example.week02.respository;
+package org.example.testing_001.repository;
 
-import org.example.week02.model.Course;
+import org.example.testing_001.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

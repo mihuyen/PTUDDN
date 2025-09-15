@@ -1,7 +1,7 @@
-package org.example.week02.controller;
+package org.example.testing_001.controller;
 
-import org.example.week02.model.Course;
-import org.example.week02.service.CourseService;
+import org.example.testing_001.model.Course;
+import org.example.testing_001.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -23,29 +23,33 @@ public class CourseController {
 
     @GetMapping("/add")
     public String showNewCourseForm(Model model) {
-        Course course = new Course();
-        model.addAttribute("course", course);
-        return "add-course";
+        Course Course = new Course();
+        model.addAttribute("course", Course);
+        return "new_course";
     }
 
     @PostMapping("/save")
     public String saveCourse(@ModelAttribute("course") Course course) {
+        // save Course to database
         courseService.saveCourse(course);
         return "redirect:/";
     }
 
     @GetMapping("/update/{id}")
     public String showFormForUpdate(@PathVariable( value = "id") long id, Model model) {
+
         Course course = courseService.getCourseById(id);
         model.addAttribute("course", course);
-        return "update-course";
+        return "update_course";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteCourse(@PathVariable (value = "id") long id) {
+
         this.courseService.deleteCourseById(id);
         return "redirect:/";
     }
+
 
     @GetMapping("/page/{pageNo}")
     public String findPaginated(@PathVariable (value = "pageNo") int pageNo,
@@ -66,6 +70,6 @@ public class CourseController {
         model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 
         model.addAttribute("listCourses", listCourses);
-        return "home-page";
+        return "index";
     }
 }

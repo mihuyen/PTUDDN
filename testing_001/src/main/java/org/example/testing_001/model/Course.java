@@ -1,7 +1,10 @@
-package org.example.week02.model;
+package org.example.testing_001.model;
+
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor

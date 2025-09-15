@@ -1,13 +1,13 @@
-package org.example.week02;
+package org.example.testing_001;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Week02Application {
+public class Testing001Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Week02Application.class, args);
+        SpringApplication.run(Testing001Application.class, args);
     }
 
 }
